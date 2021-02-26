@@ -57,6 +57,7 @@ export default ({ data }) => {
         width={400}
         height={400}
         loading="lazy"
+        alt={node.featuredImage.node.altText}
         />
         <p class="p-2">{parse(node.excerpt)}</p>
       </div>
@@ -76,9 +77,8 @@ query {
         slug
         featuredImage {
           node {
-            srcSet
+            altText
             sourceUrl
-            sizes
           }
         }
       }
