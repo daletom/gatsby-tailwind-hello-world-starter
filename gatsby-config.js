@@ -16,6 +16,22 @@ module.exports = {
           `https://wptogatsby.flywheelsites.com/graphql`,
       },
     },
+    {
+      resolve: `gatsby-plugin-google-gtag`,
+      options: {
+        trackingIds: ["G-ETGGVHPR5J"],
+        gtagConfig: {
+          optimize_id: "OPT-NP53F4X",
+          anonymize_ip: true,
+          cookie_expires: 0,
+        },
+        pluginConfig: {
+          head: false,
+          respectDNT: true,
+          exclude: ["/preview"]
+        }
+      }
+    },
     `gatsby-plugin-postcss`,
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
