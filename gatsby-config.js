@@ -6,6 +6,16 @@
 
 module.exports = {
   /* Your site config here */
-  plugins: [],
-  plugins: ['gatsby-plugin-postcss'],
+  plugins: [
+    {
+      resolve: `gatsby-source-wordpress`,
+      options: {
+        // the only required plugin option for WordPress is the GraphQL url.
+        url:
+          process.env.WPGRAPHQL_URL ||
+          `https://wptogatsby.flywheelsites.com/graphql`,
+      },
+    },
+    `gatsby-plugin-postcss`,
+  ],
 }
