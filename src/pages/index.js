@@ -1,7 +1,7 @@
 import React from "react"
 import { graphql } from "gatsby"
 import parse from "html-react-parser"
-//import Image from "gatsby-image"
+import Imgix from "react-imgix"
 
 export default ({ data }) => {
   return (
@@ -45,16 +45,18 @@ export default ({ data }) => {
             />
     <img src="https://images.unsplash.com/photo-1534796636912-3b95b3ab5986?blend64=aHR0cHM6Ly9kZW1vcy5pbWdpeC5uZXQvZGFyay1lbGxpcHNlLWdyYWRpZW50LmFpP2ZtPXBuZyZhcj0yOjE&blend-mode=multiply&blend-size=inherit&w=1200&fit=crop&ar=2%3A1&txt64=RmFyIEZhciBBd2F5IE5ld3M&txt-color=white&txt-align=middle%2Ccenter&txt-fit=max&txt-size=72&auto=format,compress"></img>
   </picture>
-    <div class="flex items-start flex-wrap">
+    <div class="flex flex-wrap">
     {data.allWpPost.edges.map(({ node }) => (
       <div class="p-4 w-1/3">
       {/* <Link to={node.slug}> */}
         <p class="text-2xl p-2">{parse(node.title)}</p>
         {/* </Link> */}
-        <img 
+        <Imgix 
         src={node.featuredImage.node.sourceUrl}
-        srcSet={node.featuredImage.node.srcSet}
-        sizes="(min-width: 768px) 33vw, 50vw"
+        imgixParams={{ fit: "crop", crop: "faces,edges"}}
+        width={400}
+        height={400}
+        loading="lazy"
         />
         <p class="p-2">{parse(node.excerpt)}</p>
       </div>
