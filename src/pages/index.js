@@ -47,15 +47,14 @@ export default ({ data }) => {
   </picture>
     <div class="flex flex-wrap">
     {data.allWpPost.edges.map(({ node }) => (
-      <div class="p-4 w-1/3">
+      <div class="p-4 lg:w-1/3 md:w-1/2 sm:w-full">
       {/* <Link to={node.slug}> */}
         <p class="text-2xl p-2">{parse(node.title)}</p>
         {/* </Link> */}
         <Imgix 
         src={node.featuredImage.node.sourceUrl}
         imgixParams={{ fit: "crop", crop: "focalpoint"}}
-        width={400}
-        height={400}
+        sizes="(min-width: 1024px) 30vw, (min-width: 768px) 50vw, 100vw"
         loading="lazy"
         alt={node.featuredImage.node.altText}
         />
