@@ -56,9 +56,11 @@ export default ({ data }) => {
         imgixParams={{ fit: "crop", crop: "focalpoint", ar: "1.8:1"}}
         sizes="(min-width: 1024px) calc(33vw - 60px), (min-width: 768px) calc(50vw - 100px), calc(100vw - 70px)"
         loading="lazy"
-        alt={node.featuredImage.node.altText}
+        imgProps={{
+          alt: "FarFarAway News image"
+        }}
         />
-        <p class="p-2">{parse(node.excerpt)}</p>
+        <p class="p-2">{parse(node.content)}</p>
       </div>
     ))}
     </div>
@@ -72,7 +74,7 @@ query {
     edges {
       node {
         title
-        excerpt
+        content
         slug
         featuredImage {
           node {
