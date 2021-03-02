@@ -54,7 +54,7 @@ export default ({ data }) => {
         <Imgix 
         src={node.featuredImage.node.sourceUrl}
         imgixParams={{ fit: "crop", crop: "focalpoint", ar: "1.8:1"}}
-        sizes="(min-width: 1024px) 30vw, (min-width: 768px) 50vw, 100vw"
+        sizes="(min-width: 1024px) calc(30vw - 128px), (min-width: 768px) calc(50vw - 100px), calc(100vw - 70px)"
         loading="lazy"
         alt={node.featuredImage.node.altText}
         />
