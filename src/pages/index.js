@@ -6,7 +6,7 @@ import Imgix from "react-imgix"
 export default ({ data }) => {
   return (
   <div class="p-4"> 
-    <picture>
+    <picture class="h-auto w-full">
     <source
       media="(min-width: 2100px)"
       srcset="https://images.unsplash.com/photo-1534796636912-3b95b3ab5986?blend64=aHR0cHM6Ly9kZW1vcy5pbWdpeC5uZXQvZGFyay1lbGxpcHNlLWdyYWRpZW50LmFpP2ZtPXBuZyZhcj0yOjE&blend-mode=multiply&blend-size=inherit&w=2400&fit=crop&ar=4%3A1&txt64=RmFyIEZhciBBd2F5IE5ld3M&txt-color=white&txt-align=middle%2Ccenter&txt-fit=max&txt-size=72&auto=format,compress"
@@ -54,7 +54,7 @@ export default ({ data }) => {
         <Imgix 
         src={node.featuredImage.node.sourceUrl}
         imgixParams={{ fit: "crop", crop: "focalpoint", ar: "1.8:1"}}
-        sizes="(min-width: 1024px) calc(30vw - 128px), (min-width: 768px) calc(50vw - 100px), calc(100vw - 70px)"
+        sizes="(min-width: 1024px) calc(33vw - 60px), (min-width: 768px) calc(50vw - 100px), calc(100vw - 70px)"
         loading="lazy"
         alt={node.featuredImage.node.altText}
         />
