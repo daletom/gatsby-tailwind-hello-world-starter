@@ -70,7 +70,7 @@ export default ({ data }) => {
 
 export const query = graphql`
 query {
-  allWpPost(sort: {order: DESC, fields: date}) {
+  allWpPost {
     edges {
       node {
         title
